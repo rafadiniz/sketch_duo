@@ -232,7 +232,10 @@ void draw(){
   
     yspeed = 1.2;
     
-    length = map(mouseY, 0, height, 0,25); rand = map(mouseY, 0, height, 0,100);
+    float len = map(mouseY, 0, height, 0,25);
+    
+    length = len; rand = map(mouseY, 0, height, 0,100);
+    
     posW = 50; 
     posH_= 100;
     c_ = 255;
