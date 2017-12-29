@@ -82,11 +82,15 @@ void setup(){
    
 }
 
+  //ctr1
+  
   float ypos, yspeed, xpos, xspeed;
     
   float fr = 60;
   
   float length, rand;
+  
+  //ctr2
   
   float posW, posH_, c_, trans, strokeW, sizew, sizey; 
   
@@ -95,12 +99,14 @@ void setup(){
   float posW_2, posH_2, c_2, trans_2, strokeW_2, sizew_2, sizey_2;
   
   
-  float amp, velamp;
+ //ctr1
   
   float sy_amp, sy_rate, sy_pan, sy_out;
   
   float sp_amp, sp_dur, sp_rate, sp_pan, sp_out;
   
+  
+ //ctr2
   
   float sy_amp_2, sy_rate_2, sy_pan_2, sy_out_2;
   
@@ -131,7 +137,8 @@ int text_C = 200;
 
 void draw(){
   
-   
+  //title
+  
   background(0);
    
   fill(text_C);
@@ -142,6 +149,9 @@ void draw(){
   textSize(50);
   text("_[]dUO", 10, 110);
 
+
+     //key silenciator  
+       
      if (key == 'z') {
       
 
@@ -160,7 +170,8 @@ void draw(){
       
     }
    
-   
+    //ctr1
+    
     synth.set("amp", sy_amp);
     synth.set("rate", sy_rate);
     synth.set("pan", sy_pan);
@@ -173,6 +184,9 @@ void draw(){
     sample.set("pan", sp_pan);
     sample.set("amp", sp_amp);
     sample.set("outbus", sp_out);
+    
+    
+    //ctr2
     
     synth2.set("amp", sy_amp_2);
     synth2.set("rate", sy_rate_2);
@@ -187,12 +201,16 @@ void draw(){
     sample2.set("amp", sp_amp_2);
     sample2.set("outbus", sp_out_2);
    
-   
+     //ctr1
+     
      for (int i = 0; i < length; i ++) {
          
       crt[i].display(posW+random(rand), posH_+random(rand), c_, trans, strokeW, sizew, sizey);
      
     }
+    
+    
+    //crt2
     
     for (int i = 0; i < length_2; i ++) {
          
@@ -229,13 +247,14 @@ void draw(){
 
    if (key == '1') {
      
-  
+  //ctr1
+     
     yspeed = 1.2;
     
-    float len = map(mouseY, 0, height, 0,25);
+ 
     
-    length = len; rand = map(mouseY, 0, height, 0,100);
-    
+    length = map(mouseY, 0, height, 0,25); 
+    rand = map(mouseY, 0, height, 0,100);
     posW = 50; 
     posH_= 100;
     c_ = 255;
@@ -264,9 +283,12 @@ void draw(){
    
    if (key == '2') {
      
+     //ctr1
+     
     yspeed =0; 
     
-    length = 75; rand =300;
+    length = 75; 
+    rand =300;
     posW = 50; 
     posH_= 100; 
     c_ = random(255);
@@ -299,6 +321,8 @@ void draw(){
  
    if (key == '3') {
      
+     //ctr1
+     
      
     yspeed = 2.5*-1;
     xspeed = 10;
@@ -308,7 +332,8 @@ void draw(){
     strokeWeight(1800);
     line(600,0,600,height);  
      
-    length = 4; rand = 50;
+    length = 4; 
+    rand = 50;
     posW = 150; 
     posH_= 50; 
     c_ = 255;
@@ -336,11 +361,12 @@ void draw(){
    
     if (key == '4') {
       
-
+   //ctr2
       
     yspeed = 0.6;    
  
-    length_2 = map(mouseY,0,height,0,75); rand_2 = map(mouseY,0,height,0,30);
+    length_2 = map(mouseY,0,height,0,75); 
+    rand_2 = map(mouseY,0,height,0,30);
     posW_2 = 750; 
     posH_2=  200; 
     c_2 = map(mouseY,0,height,100,random(155,255));
@@ -370,6 +396,8 @@ void draw(){
    
     
     if (key == 'q') {
+      
+    //ctr2
          
     xspeed = 0;  
  
@@ -404,6 +432,9 @@ void draw(){
 
         
     if (key == 'w') {
+      
+      
+    //ctr2
          
     xspeed = 0;  
  
@@ -435,6 +466,7 @@ void draw(){
    
      if (key == 'e') {
       
+    //ctr2   
 
     xspeed = 3;  
  
@@ -464,6 +496,8 @@ void draw(){
     
     if (key == 'a') {
       
+    //ctr1
+      
     yspeed = 0;
     
     length = 55; rand = 0;
@@ -492,7 +526,8 @@ void draw(){
    
     if (key == 's') {
       
-
+    //ctr2
+      
     xspeed = 3;  
  
     length_2 = 75; rand_2 = 0;
@@ -523,7 +558,9 @@ void draw(){
     reverb.set("inbus", 12);
     reverb.set("outbus", 0);
     
-    //////////////////////
+    
+    
+    //ctr1
       
      yspeed = 0;
     
@@ -553,10 +590,12 @@ void draw(){
    
     if (key == 'd') {
       
+    //ctr2  
 
     xspeed = 3.4;  
  
-    length_2 = 75; rand_2 = map(mouseY,0,height,100,0);
+    length_2 = 75; 
+    rand_2 = map(mouseY,0,height,100,0);
     posW_2 = 10; 
     posH_2=  200; 
     c_2 = map(mouseY,0,height,255,10);
@@ -576,11 +615,12 @@ void draw(){
     sp_amp_2 = map(mouseY,0,height,500,0);
     sp_out_2 = 0;
     
-    //////////////////////
+    
+    
+    //ctr1
       
-    
-    
-    length = map(mouseY,0,height,55,0); rand = map(mouseY,0,height,100,0);
+    length = map(mouseY,0,height,55,0); 
+    rand = map(mouseY,0,height,100,0);
     posW = 0; 
     posH_= 200;
     c_ = map(mouseY,0,height,255,10);
