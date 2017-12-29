@@ -9,7 +9,7 @@ s.newAllocators;
 "C:/Users/rafael/Music/wav/elevator_1.wav",
 "C:/Users/rafael/Music/wav/elevator_2.wav",
 "C:/Users/rafael/Music/wav/elevator_3.wav",
-	"C:/Users/rafael/Documents/Processing/sketch_dientes_negros/samples/177274.aiff"
+"C:/Users/rafael/Documents/Processing/sketch_dientes_negros/samples/177274.aiff"
 
 ].collect({arg thispath;
 	 Buffer.readChannel(s, thispath,channels: [0]);
