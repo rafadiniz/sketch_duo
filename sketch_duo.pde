@@ -36,7 +36,6 @@ void setup(){
   sample2.set("outbus", 0);
   sample2.create();
  
- 
   synth = new Synth("playbuf_1");
   synth.set("rate", 80);
   synth.set("amp", 0.0);
@@ -51,7 +50,6 @@ void setup(){
   synth2.set("outbus", 0);
   synth2.create();
   
-  
   reverb = new Synth("reverb");
   reverb.set("inbus", 12);
   reverb.set("mix", 0);
@@ -61,8 +59,7 @@ void setup(){
 
   reverb.addToTail();
 
-  
-   
+
     for (int i = 0; i < crt.length; i ++) {
       
       crt[i] = new c01(i*13,i*3);
@@ -82,7 +79,7 @@ void setup(){
    
 }
 
-  //ctr1
+  //ctr1 image
   
   float ypos, yspeed, xpos, xspeed;
     
@@ -90,7 +87,7 @@ void setup(){
   
   float length, rand;
   
-  //ctr2
+  //ctr2 image
   
   float posW, posH_, c_, trans, strokeW, sizew, sizey; 
   
@@ -99,14 +96,14 @@ void setup(){
   float posW_2, posH_2, c_2, trans_2, strokeW_2, sizew_2, sizey_2;
   
   
- //ctr1
+  //ctr1 sound
   
   float sy_amp, sy_rate, sy_pan, sy_out;
   
   float sp_amp, sp_dur, sp_rate, sp_pan, sp_out;
   
   
- //ctr2
+  //ctr2 sound
   
   float sy_amp_2, sy_rate_2, sy_pan_2, sy_out_2;
   
@@ -150,7 +147,7 @@ void draw(){
   text("_[]dUO", 10, 110);
 
 
-     //key silenciator  
+     //key silencer  
        
      if (key == 'z') {
       
@@ -201,7 +198,7 @@ void draw(){
     sample2.set("amp", sp_amp_2);
     sample2.set("outbus", sp_out_2);
    
-     //ctr1
+    //ctr1
      
      for (int i = 0; i < length; i ++) {
          
@@ -247,7 +244,7 @@ void draw(){
 
    if (key == '1') {
      
-  //ctr1
+   //ctr1
      
     yspeed = 1.2;
     
@@ -283,7 +280,7 @@ void draw(){
    
    if (key == '2') {
      
-     //ctr1
+   //ctr1
      
     yspeed =0; 
     
@@ -321,7 +318,7 @@ void draw(){
  
    if (key == '3') {
      
-     //ctr1
+   //ctr1
      
      
     yspeed = 2.5*-1;
@@ -361,7 +358,7 @@ void draw(){
    
     if (key == '4') {
       
-   //ctr2
+    //ctr2
       
     yspeed = 0.6;    
  

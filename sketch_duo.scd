@@ -29,7 +29,6 @@ b = Buffer.allocConsecutive(8, s, 4096, 1, { |buf, i|
 (
 
 
-
 SynthDef(\playbuf, {arg outbus=0, gate=1,amp=0.5,rate,pan, bufnum, trig=1, startpos,loop;
     var envv,env,envgen,sig,data2;
 
@@ -73,18 +72,6 @@ SynthDef(\sine, { |outbus = 0, amp = 0.5, freq = 440, freq2 = 0,rang1,rang2, gai
 }).store;
 
 
-SynthDef(\saw, { |outbus = 0, amp = 0, freqs = 440, pan = 0|
-	var data,saw, env,envgen, freqx;
-
-
-    /*env = Env([0, 1.0], [0.5]);
-	envgen = EnvGen.ar(env,1,doneAction: 2);*/
-	data = Saw.ar(freqs.midicps)* amp;
-	saw = Pan2.ar(data, pan);
-
-	Out.ar(outbus, saw);
-}).store;
-
 
 SynthDef(\reverb, {arg inbus,outbus=0,mix,room, damp;
 
@@ -99,14 +86,16 @@ SynthDef(\reverb, {arg inbus,outbus=0,mix,room, damp;
 }).store;
 
 
-SynthDef(\diskout, {arg bufnum;
-    DiskOut.ar(bufnum, In.ar(0,2));
-}).add;
-
 )
 
 
 (
+
+SynthDef(\diskout, {arg bufnum;
+    DiskOut.ar(bufnum, In.ar(0,2));
+}).add;
+
+
 ~diskout = Buffer.alloc(s, 65536, 2);
 ~diskout.write("C:/Users/rafael/Documents/audio/imp/elevator111_131117.aiff".standardizePath, "aiff", "int16", 0, 0, true);
 ~sdiskout = Synth.tail(nil, \diskout, ["bufnum", ~diskout]);
