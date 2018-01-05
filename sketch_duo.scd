@@ -29,17 +29,15 @@ b = Buffer.allocConsecutive(8, s, 4096, 1, { |buf, i|
 (
 
 
-SynthDef(\playbuf, {arg outbus=0, gate=1,amp=0.5,rate,pan, bufnum, trig=1, startpos,loop;
-    var envv,env,envgen,sig,data2;
+SynthDef(\playbuf, {arg outbus=0, amp=0.5,rate =1,pan =0, bufnum, trig=1, startpos;
+    var sig,data;
 
-    env = Env([3, 0.02, 0.02, 0.02, 0], [1, 0.2, 0.2, 1]);
+
 	sig    = PlayBuf.ar(1, bufnum, BufRateScale.kr(bufnum);  rate,trig,Phasor.ar(trig,BufRateScale.kr(bufnum),startpos*BufFrames.kr(bufnum),BufFrames.kr(bufnum)),1,2);
 
-	data2 = Pan2.ar(sig, pan);
+	data = Pan2.ar(sig, pan);
 
-/*	#w,x,y,z = BFEncode1.ar(sig,azi/**LFNoise1.ar(vpan)*/,0,rho);*/
-
-	Out.ar(outbus,data2*amp)
+	Out.ar(outbus,data*amp)
 
 }).store;
 
@@ -58,25 +56,8 @@ SynthDef(\playbuf_1, {arg outbus = 0, amp = 0.5, loop = 1,
 
 
 
-SynthDef(\sine, { |outbus = 0, amp = 0.5, freq = 440, freq2 = 0,rang1,rang2, gain=3, pan = 0|
-	var env, data,data2, sine, freqx,sig;
-
-
-	sig =  MoogFF.ar( Pulse.ar(freq.midicps, 0.5),
-        SinOsc.kr(freq2,0,1).range(rang1.midicps, rang2.midicps),
-        0.83 * 4);
-	data2 = Pan2.ar(sig, pan);
-
-
-	Out.ar(outbus, data2*amp);
-}).store;
-
-
 
 SynthDef(\reverb, {arg inbus,outbus=0,mix,room, damp;
-
-/*	a = Resonz.ar(
-		In.ar(inbus,2));*/
 
     Out.ar(outbus, FreeVerb.ar((In.ar(inbus,2)),
         mix,
