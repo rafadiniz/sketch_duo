@@ -18,6 +18,7 @@ void setup(){
  
  frameRate(60);
  
+
   sample = new Synth("playbuf");
   sample.set("bufnum", 0);
   sample.set("startpos", 0);
@@ -57,7 +58,7 @@ void setup(){
   reverb.set("damp", 0);
   reverb.set("outbus", 0);
 
-  reverb.addAfter(sample);
+  reverb.addToTail();
 
 
     for (int i = 0; i < crt.length; i ++) {
