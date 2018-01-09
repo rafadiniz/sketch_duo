@@ -57,7 +57,7 @@ void setup(){
   reverb.set("damp", 0);
   reverb.set("outbus", 0);
 
-  reverb.addToTail();
+  reverb.addAfter(sample);
 
 
     for (int i = 0; i < crt.length; i ++) {
