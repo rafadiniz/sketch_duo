@@ -18,12 +18,11 @@ s.newAllocators;
 )
 
 (
-b = Buffer.alloc(s, 4096, 1, { |buf, i|
-    buf.sine1Msg((100).reciprocal)});
+b = Buffer.allocConsecutive(8, s, 4096, 1, { |buf, i|
+    buf.sine1Msg((1..((i+1)*10)).reciprocal)});
 
 
 )
-
 
 
 
