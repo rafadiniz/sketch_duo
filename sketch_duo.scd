@@ -19,10 +19,11 @@ s.newAllocators;
 
 (
 b = Buffer.alloc(s, 4096, 1, { |buf|
-    buf.sine1Msg((100).reciprocal)});
+    buf.sine1Msg(1)});
 
 
 )
+
 
 
 
