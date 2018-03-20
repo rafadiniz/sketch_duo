@@ -135,7 +135,6 @@ void draw() {
   textSize(40);
   text("rafa_diniz", 3, 50);
 
-  fill(text_C);
   textSize(50);
   text("_[]dUO", 10, 110);
 
