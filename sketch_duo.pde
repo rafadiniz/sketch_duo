@@ -81,7 +81,7 @@ void setup() {
 
 float ypos, yspeed, xpos, xspeed;
 
-float fr = 60;
+int fr = 60;
 
 float length, rand;
 
@@ -96,16 +96,24 @@ float posW_2, posH_2, c_2, trans_2, strokeW_2, sizew_2, sizey_2;
 
 //ctr1 sound
 
-float sy_amp, sy_rate, sy_pan, sy_out;
+float sy_amp, sy_rate, sy_pan; 
 
-float sp_amp, sp_dur, sp_rate, sp_pan, sp_out;
+int sy_out;
+
+float sp_amp, sp_dur, sp_rate, sp_pan; 
+
+int sp_out;
 
 
 //ctr2 sound
 
-float sy_amp_2, sy_rate_2, sy_pan_2, sy_out_2;
+float sy_amp_2, sy_rate_2, sy_pan_2; 
 
-float sp_amp_2, sp_rate_2, sp_pan_2, sp_out_2, buf_2 =2;
+int sy_out_2;
+
+float sp_amp_2, sp_rate_2, sp_pan_2; 
+
+int sp_out_2, buf_2 = 2;
 
 
 int lc  = 255;
@@ -296,8 +304,6 @@ void draw() {
   } 
 
 
-
-
   if (key == '3') {
 
     //ctr1
@@ -396,8 +402,6 @@ void draw() {
     sp_amp_2 = 0;
     sp_out_2 = 0;
   }
-
-
 
 
 
@@ -580,7 +584,6 @@ void draw() {
     sp_out_2 = 0;
 
 
-
     //ctr1
 
     length = map(mouseY, 0, height, 55, 0); 
@@ -604,4 +607,6 @@ void draw() {
     sp_amp = map(mouseY, 0, height, 500, 0);
     sp_out = 0;
   }
+
+  //saveFrame("frames/line-####.png");
 }

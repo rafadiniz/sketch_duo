@@ -4,7 +4,7 @@ class c01 {
 
   float posW, posH;
 
-  float c;
+  int c;
 
   c01(float DW, float DH) {
 
@@ -15,14 +15,14 @@ class c01 {
     h2 = random(50, 250);
     c = 255;
   }
-  void display(float posW_, float posH_, float c_, float trans, float strokeW, float sizew, float sizey ) {
+  void display(float posW_, float posH_, int c_, int trans, float strokeW, float sizew, float sizey ) {
 
     posW = posW_;
     c = c_;
 
     noFill();
     stroke(c_, trans);
-    strokeWeight(strokeW);
+    strokeWeight(abs(strokeW));
     rect(posW_, posH_, w2*sizew, h2*sizey);
   }
 }
