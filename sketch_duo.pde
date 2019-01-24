@@ -1,12 +1,18 @@
+//sketch_duo
+//audiovisual piece by rada_diniz
+
 import supercollider.*;
 import oscP5.*;
 
 PFont f;
 
+//supercollider synths declarations 
 Synth  sample, sample2, reverb, synth, synth2;
 
+//class1
 c01[] crt = new c01[75];
 
+//class2
 c02[] crt2 = new c02[75];
 
 
@@ -19,7 +25,8 @@ void setup() {
 
   frameRate(60);
 
-
+  //synths defs
+  
   sample = new Synth("playbuf");
   sample.set("bufnum", 0);
   sample.set("startpos", 0);
@@ -61,13 +68,13 @@ void setup() {
 
   reverb.addToTail();
 
-
+  //class1 config setup 
   for (int i = 0; i < crt.length; i ++) {
 
     crt[i] = new c01(i*13, i*3);
   }
 
-
+  //class2 config setup
   for (int i = 0; i < crt2.length; i ++) {
 
     crt2[i] = new c02(i*53, i);

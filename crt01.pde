@@ -4,7 +4,7 @@ class c01 {
 
   float posW, posH;
 
-  int c;
+  float c;
 
   c01(float DW, float DH) {
 
@@ -15,7 +15,7 @@ class c01 {
     h2 = random(50, 250);
     c = 255;
   }
-  void display(float posW_, float posH_, int c_, int trans, float strokeW, float sizew, float sizey ) {
+  void display(float posW_, float posH_, float c_, float trans, float strokeW, float sizew, float sizey ) {
 
     posW = posW_;
     c = c_;

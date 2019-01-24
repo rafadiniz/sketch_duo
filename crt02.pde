@@ -4,7 +4,7 @@ class c02 {
 
   float posW, posH;
 
-  int c; 
+  float c; 
 
   c02(float DW, float DH) {
 
@@ -16,7 +16,7 @@ class c02 {
     c = 255;
   }
 
-  void display(float posW_, float posH_, int c_, int trans, float strokeW, float sizew, float sizeh) {
+  void display(float posW_, float posH_, float c_, float trans, float strokeW, float sizew, float sizeh) {
 
     c = c_;
 
