@@ -90,7 +90,7 @@ float ypos, yspeed, xpos, xspeed;
 
 int fr = 60;
 
-float length, rand;
+float length_1, rand;
 
 //ctr2 image
 
@@ -204,7 +204,7 @@ void draw() {
 
   //ctr1
 
-  for (int i = 0; i < length; i ++) {
+  for (int i = 0; i < length_1; i ++) {
 
     crt[i].display(posW+random(rand), posH_+random(rand), c_, trans, strokeW, sizew, sizey);
   }
@@ -252,7 +252,7 @@ void draw() {
 
 
 
-    length = map(mouseY, 0, height, 0, 25); 
+    length_1 = map(mouseY, 0, height, 0, 25); 
     rand = map(mouseY, 0, height, 0, 100);
     posW = 50; 
     posH_= 100;
@@ -282,7 +282,7 @@ void draw() {
 
     yspeed =0; 
 
-    length = 75; 
+    length_1 = 75; 
     rand =300;
     posW = 50; 
     posH_= 100; 
@@ -324,7 +324,7 @@ void draw() {
     strokeWeight(1800);
     line(600, 0, 600, height);  
 
-    length = 4; 
+    length_1 = 4; 
     rand = 50;
     posW = 150; 
     posH_= 50; 
@@ -476,7 +476,7 @@ void draw() {
 
     yspeed = 0;
 
-    length = 55; 
+    length_1 = 55; 
     rand = 0;
     posW = -50; 
     posH_= 290;
@@ -540,7 +540,7 @@ void draw() {
 
     yspeed = 0;
 
-    length = 35; 
+    length_1 = 35; 
     rand = 0;
     posW = -10; 
     posH_= 200;
@@ -593,7 +593,7 @@ void draw() {
 
     //ctr1
 
-    length = map(mouseY, 0, height, 55, 0); 
+    length_1 = map(mouseY, 0, height, 55, 0); 
     rand = map(mouseY, 0, height, 100, 0);
     posW = 0; 
     posH_= 200;
